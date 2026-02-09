@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本週社群內容建議 - 2026/02/02-02/09</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .date {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-item .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .meta-item .label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .topic-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .topic-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .topic-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .post-suggestion {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .post-suggestion .label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .post-suggestion .text {
+            font-size: 1.1em;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+        
+        .image-direction {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .image-direction .label {
+            font-weight: bold;
+            color: #fc8181;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .image-direction .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+        
+        .reason-box {
+            background: #fffaf0;
+            border-left: 4px solid #ffa500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .reason-box .label {
+            font-weight: bold;
+            color: #ffa500;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .reason-box .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+        
+        .sources {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .sources h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .source-section {
+            margin-bottom: 20px;
+        }
+        
+        .source-section h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .source-list {
+            list-style: none;
+        }
+        
+        .source-list li {
+            padding: 8px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .source-list li:before {
+            content: "📰 ";
+            margin-right: 8px;
+        }
+        
+        .source-list a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .source-list a:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+        
+        .competitor-section h4:before {
+            content: "🎯 ";
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e9ecef;
+            color: #495057;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px 5px 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .insights {
+            background: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .insights h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        .insights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .insights li {
+            padding: 8px 0;
+            color: #2d3748;
+        }
+        
+        .insights li:before {
+            content: "✓ ";
+            color: #0066cc;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #fdcb6e;
+        }
+        
+        .highlight-box h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .highlight-box p {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .meta-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .topic-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 本週社群內容建議</h1>
+            <div class="date">2026年2月2日 - 2月9日</div>
+        </div>
+        
+        <div class="meta-info">
+            <div class="meta-item">
+                <div class="number">20</div>
+                <div class="label">相關新聞</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">12</div>
+                <div class="label">競爭對手貼文</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">3</div>
+                <div class="label">推薦主題</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="insights">
+                <h3>🔍 本週關鍵趨勢</h3>
+                <ul>
+                    <li>預售屋價格逆勢上漲：六都全面上漲，台南、新北領漲超過14%</li>
+                    <li>營建成本新變數：土方清運新制推升成本，恐影響2026房價</li>
+                    <li>交易量持續低迷：1月移轉1.82萬棟，專家警告2月恐再修正</li>
+                    <li>大型建商積極佈局：冠德等持續搶進精華區公辦都更案</li>
+                </ul>
+            </div>
+            
+            <!-- Topic 1 -->
+            <div class="topic-card">
+                <div class="topic-number">1</div>
+                <h2 class="topic-title">六都預售屋逆勢年漲近1成！台南領漲14.6%</h2>
+                
+                <div class="highlight-box">
+                    <h4>📈 六都預售屋價格變化（2024→2025）</h4>
+                    <p>🔴 台南：35.7萬/坪 → 40.9萬/坪（<strong>+14.6%</strong>）<br>
+                    🔴 新北：61.2萬/坪 → 70.2萬/坪（<strong>+14.5%</strong>）<br>
+                    🟡 台中：35.6萬/坪 → 39.9萬/坪（+12.0%）<br>
+                    🟡 桃園：32.3萬/坪 → 35.1萬/坪（+8.6%）<br>
+                    🟢 高雄：29.6萬/坪 → 32.0萬/坪（+8.0%）<br>
+                    🟢 台北：87.4萬/坪 → 89.1萬/坪（+1.9%）<br>
+                    <br>
+                    資料來源：實價登錄，中信房屋統計</p>
+                </div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #d4f1f4 0%, #9fe2bf 100%); border-color: #9fe2bf;">
+                    <h4>🔑 建商硬撐的3大關鍵</h4>
+                    <p>1️⃣ <strong>精華區高價案墊高平均</strong>：台南「國城寶實」、新北「漢皇River Sky」等指標案推升整體均價<br>
+                    2️⃣ <strong>預售付款彈性吸引剛需</strong>：工程期長、付款節奏彈性，無須立刻面對房貸壓力<br>
+                    3️⃣ <strong>營建成本居高不下</strong>：建商惜售、不願降價認賠，寧可以價換量</p>
+                </div>
+                
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">交易量急凍，預售屋卻全面飆漲？台南年漲14.6%、新北14.5%...建商硬撐靠3關鍵！</div>
+                </div>
+                
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">六都預售屋價格變化圖表，台南、新北領漲標示，搭配「3大硬撐關鍵」條列說明</div>
+                </div>
+                
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">自由時報2/9最新報導，儘管交易量萎縮，六都預售屋仍全面上漲，顯示建商惜售與成本支撐，是本週最具話題性的新聞</div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="tag">#預售屋漲價</span>
+                    <span class="tag">#台南房市</span>
+                    <span class="tag">#建商策略</span>
+                    <span class="tag">#成本墊高</span>
+                </div>
+            </div>
+            
+            <!-- Topic 2 -->
+            <div class="topic-card">
+                <div class="topic-number">2</div>
+                <h2 class="topic-title">「土方之亂」來襲！營建成本恐再推升房價</h2>
+                
+                <div class="highlight-box">
+                    <h4>⚠️ 土方清運新制衝擊</h4>
+                    <p>📅 <strong>2026年起實施</strong>：「營建剩餘土石方全流向」管理新制<br>
+                    <br>
+                    <strong>三大困境：</strong><br>
+                    🚧 合法土資場與處理場供給有限<br>
+                    🚚 清運車輛與司機缺工嚴重<br>
+                    📋 環保稽查與聯單制度趨嚴<br>
+                    <br>
+                    <strong>影響：</strong><br>
+                    💰 土方清運與處理費用較疫情前大幅提高<br>
+                    ⏰ 多處建案工程進度受影響<br>
+                    📈 營建成本回落空間有限</p>
+                </div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #ffe5e5 0%, #ffcccc 100%); border-color: #ffcccc;">
+                    <h4>🏗️ 建商因應策略</h4>
+                    <p>・將土方及廢棄物處理費用<strong>前移納入土地評估</strong><br>
+                    ・台南市府開放<strong>低窪地回填</strong>作為去化管道<br>
+                    ・建照延長<strong>2年</strong>降低開工壓力（112-115年領照者適用）</p>
+                </div>
+                
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">土方清運新制上路，合法土資場不夠用、清運費暴漲...建商：成本回不去了，房價恐再漲一波！</div>
+                </div>
+                
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">土方清運困境示意圖，標註「清運費上漲」「合法場地有限」「環保稽查趨嚴」，搭配營建成本上升曲線</div>
+                </div>
+                
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">聯合新聞網1/9報導，土方清運新制造成營建成本上升，成為2026年房價變數，具新聞性與影響力</div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="tag">#土方之亂</span>
+                    <span class="tag">#營建成本</span>
+                    <span class="tag">#房價上漲</span>
+                    <span class="tag">#環保新制</span>
+                </div>
+            </div>
+            
+            <!-- Topic 3 -->
+            <div class="topic-card">
+                <div class="topic-number">3</div>
+                <h2 class="topic-title">冠德砸137億拿下通化安和公辦都更</h2>
+                
+                <div class="highlight-box">
+                    <h4>🏢 案場資訊</h4>
+                    <p><strong>地點：</strong>大安區通化街、安和路口<br>
+                    <strong>得標：</strong>冠德建設（最優申請人）<br>
+                    <strong>規模：</strong>地上23層、地下4層 SC構造<br>
+                    <strong>面積：</strong>更新後樓地板約9,500坪以上<br>
+                    <strong>總銷：</strong>137億元<br>
+                    <strong>完工：</strong>預計2033年<br>
+                    <br>
+                    <strong>特色：</strong><br>
+                    🏛️ 保留歷史建築「羅友倫故居」<br>
+                    📚 展示空間、餐飲、多功能場地並存<br>
+                    🌳 文化保存與生活機能併行發展</p>
+                </div>
+                
+                <div class="highlight-box" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-color: #c8e6c9;">
+                    <h4>🎯 冠德近期佈局</h4>
+                    <p>冠德持續搶進台北市精華區公辦都更案，顯示大型建商對<strong>精華地段長期價值</strong>的信心，即使整體房市交易量萎縮，精華區仍是兵家必爭之地。</p>
+                </div>
+                
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">冠德再出手！拿下大安區通化安和都更案，預計2033年完工、總銷137億...北市精華區都更誰全都要？</div>
+                </div>
+                
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">案場位置圖標示大安區通化街、安和路，搭配冠德logo與「137億總銷」大標</div>
+                </div>
+                
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">自由時報2/6報導，冠德持續佈局北市精華區公辦都更，顯示大型建商信心與策略，具指標意義</div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="tag">#公辦都更</span>
+                    <span class="tag">#冠德建設</span>
+                    <span class="tag">#大安區</span>
+                    <span class="tag">#台北精華區</span>
+                </div>
+            </div>
+            
+            <!-- Sources -->
+            <div class="sources">
+                <h3>📚 本週資料來源（2/2-2/9）</h3>
+                
+                <div class="source-section">
+                    <h4>最新新聞（20篇）</h4>
+                    <ul class="source-list">
+                        <li><a href="https://estate.ltn.com.tw/article/26914" target="_blank">六都預售屋年漲近1成，台南漲14.6%領跑</a>（自由時報，2/9 今日）</li>
+                        <li><a href="https://udn.com/news/story/7238/9254877" target="_blank">土方之亂恐推升房價，清運費用持續上揚</a>（聯合新聞網，1/9）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/26896" target="_blank">冠德拿下通化安和公辦都更，總銷137億</a>（自由時報，2/6）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/26912" target="_blank">六都1月移轉1.82萬棟，月減8.3%年增28.1%</a>（自由時報，2/7）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/26855" target="_blank">買氣不振！1月六都移轉專家：短期難突破</a>（自由時報，2/2）</li>
+                        <li><a href="https://www.cna.com.tw/news/afe/202602020290.aspx" target="_blank">專家：1月數據為虛胖，2月恐修正</a>（中央社，2/2）</li>
+                        <li><a href="https://ec.ltn.com.tw/article/breakingnews/5330087" target="_blank">1月六都移轉量呈現年增，算是淡季好消息</a>（自由財經，2/2）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/26538" target="_blank">2025年六都全年移轉20.5萬棟創8年新低</a>（自由時報，1/2）</li>
+                        <li><a href="https://today.line.me/tw/v3/article/Za5jQRP" target="_blank">全年全台力守26萬棟大關</a>（LINE TODAY，1/2）</li>
+                        <li><a href="https://today.line.me/tw/v3/article/oq9B8gW" target="_blank">六都建物移轉量探8年低點</a>（住展雜誌，1/5）</li>
+                        <li><a href="https://tw.stock.yahoo.com/news/2026%E6%88%BF%E5%B8%82%E5%B1%95%E6%9C%9B" target="_blank">房仲全聯會示警：房市5顆未爆彈倒數中</a>（EBC東森財經，2/5）</li>
+                        <li><a href="https://www.farglory-realty.com.tw/life-proposal/expert_peizhen_real-estate-2026/" target="_blank">2025房市回顧與2026盤整展望</a>（遠雄房地產，1/2）</li>
+                        <li>南市放寬建照延長2年因應土方新制（自由時報，2/7）</li>
+                        <li>李同榮：2026房價平均跌10%，台南高雄恐超跌（今周刊，1/5）</li>
+                        <li>央行持續信用管制，房市短期難回暖（遠雄房地產，1/2）</li>
+                        <li>預售屋交易量較2024年減少六到七成（遠雄房地產，10/21）</li>
+                        <li>全國待售餘屋續創新高，建商降價壓力大（今周刊，1/5）</li>
+                        <li>2026年全台推案量約2兆元，年減6-8%（自由時報，12/29）</li>
+                        <li>房產稅收可能短徵，影響政府長照預算（自由時報，12/29）</li>
+                        <li>北市公會：輝達宅效應可望帶動交易量回穩（HouseFeel，1/9）</li>
+                    </ul>
+                </div>
+                
+                <div class="source-section competitor-section">
+                    <h4>競爭對手分析</h4>
+                    <ul class="source-list">
+                        <li>樂居 - 台灣第2大流量房產網站，月流量120萬不重複用戶</li>
+                        <li>樂居 - 每週三20:00更新《奕起看房產》YouTube節目</li>
+                        <li>樂居 - Instagram 13K粉絲，持續更新房市分析reels</li>
+                        <li>591 - 提供8萬租屋物件、22萬中古屋物件</li>
+                        <li>591 - 每日60萬人在線找屋，市占率領先</li>
+                        <li>591 - 持續發布房市趨勢分析與實價登錄數據</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🤖 由 n8n 自動化系統生成 | 更新時間：2026年2月9日 星期一</p>
+            <p style="margin-top: 10px; opacity: 0.8;">數據來源：自由時報、聯合新聞網、中央社、中信房屋、永慶房產、遠雄房地產</p>
+        </div>
+    </div>
+</body>
+</html>
