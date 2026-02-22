@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本週社群內容建議 - 2026/02/15-02/22</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .date {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header .nav-back {
+            display: inline-block;
+            margin-top: 16px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: all 0.2s;
+        }
+
+        .header .nav-back:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .meta-item .label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .insights {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 30px;
+        }
+
+        .insights h3 {
+            color: #2d3748;
+            margin-bottom: 16px;
+            font-size: 1.2em;
+        }
+
+        .insights ul {
+            list-style: none;
+        }
+
+        .insights li {
+            padding: 8px 0;
+            color: #2d3748;
+        }
+
+        .insights li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .topic-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .topic-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .topic-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #fdcb6e;
+        }
+
+        .highlight-box h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .post-suggestion {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .post-suggestion .label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .post-suggestion .text {
+            font-size: 1.1em;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .image-direction {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .image-direction .label {
+            font-weight: bold;
+            color: #fc8181;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .image-direction .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .reason-box {
+            background: #fffaf0;
+            border-left: 4px solid #ffa500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .reason-box .label {
+            font-weight: bold;
+            color: #ffa500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .reason-box .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: #667eea;
+            border: 1px solid #c7d2fe;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 4px 4px 4px 0;
+        }
+
+        .sources {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .sources h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .source-section {
+            margin-bottom: 20px;
+        }
+
+        .source-section h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .source-list {
+            list-style: none;
+        }
+
+        .source-list li {
+            padding: 8px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .source-list li:before {
+            content: "📰 ";
+            margin-right: 8px;
+        }
+
+        .source-list a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .source-list a:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #a0aec0;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .meta-info { flex-direction: column; gap: 20px; }
+            .content { padding: 20px; }
+            .topic-card { padding: 20px; }
+            .topic-title { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 本週社群內容建議</h1>
+            <div class="date">2026年2月15日 – 2月22日（VOL.5）</div>
+            <a class="nav-back" href="../index.html">← 返回全部週報</a>
+        </div>
+
+        <div class="meta-info">
+            <div class="meta-item">
+                <div class="number">15</div>
+                <div class="label">相關新聞</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">3</div>
+                <div class="label">推薦主題</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">19.5%</div>
+                <div class="label">台南議價率</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">150萬</div>
+                <div class="label">北士科住宅單價</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="insights">
+                <h3>🔍 本週關鍵趨勢</h3>
+                <ul>
+                    <li>輝達與北市府正式簽約進駐北士科，住宅破150萬/坪，商辦衝刺百萬關卡</li>
+                    <li>房市明確轉向買方市場：六都議價率全面擴大，台南19.5%居冠、成交天數拉長</li>
+                    <li>土方新制引爆建商危機：清運成本暴增5-10倍，中小建商面臨停工倒閉潮</li>
+                    <li>1月交易量月減8.3%，春節後買氣能否回溫成2026首季關鍵指標</li>
+                </ul>
+            </div>
+
+            <!-- Topic 1 -->
+            <div class="topic-card">
+                <div class="topic-number">1</div>
+                <h2 class="topic-title">輝達正式簽約北士科！住宅破150萬，商辦能衝百萬嗎？</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>2026年2月11-12日</strong>：台北市政府與NVIDIA完成地上權簽約<br>
+                        ・基地：北士科T17+T18合併為T1718（3.89公頃），建蔽率70%、容積率300%<br>
+                        ・住宅行情：預售案「士科大院」成交價已達<strong>106.4萬→110.6萬/坪</strong>，天花板衝上<strong>150萬/坪</strong><br>
+                        ・商辦行情：從60萬/坪成長到80萬/坪，部分個案喊出<strong>百萬遠景</strong><br>
+                        ・預期效應：高薪科技人才湧入、產業聚落強化、周邊都更加速<br>
+                        ・資料來源：聯合新聞網、安傳媒、工商時報
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">輝達正式簽約北士科！住宅已經破150萬/坪，商辦還在60-80萬...專家喊「百萬遠景」，但建商卻說「效應不如想像」？輝達宅 vs 台積電宅，誰會贏？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">北士科空拍圖標示T1718基地位置；左右對比框：「住宅150萬」vs「商辦80萬」；底部加「輝達星艦總部示意圖」；側邊放「利多vs政策打房」天秤圖</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">輝達正式簽約是本週最重磅科技房產新聞，住宅與商辦價差引發討論熱度；「科技利多vs打房政策」的拉鋸戰是當前房市核心矛盾，適合深度剖析</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#輝達宅</span>
+                    <span class="tag">#北士科</span>
+                    <span class="tag">#AI總部</span>
+                    <span class="tag">#商辦衝百萬</span>
+                </div>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="topic-card">
+                <div class="topic-number">2</div>
+                <h2 class="topic-title">房市正式轉向買方！六都議價率全面擴大，台南砍價近2成</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>議價率擴大</strong>（截至2月中旬，vs去年同期）：<br>
+                        　台南市 <strong>19.5%</strong>（居冠）<br>
+                        　桃園市 <strong>18.2%</strong>（次高）<br>
+                        　台中市 持平（唯一未擴大）<br>
+                        　其餘五都 全面上揚<br>
+                        ・<strong>成交天數拉長</strong>：<br>
+                        　台北市 <strong>79.4日</strong>（最久）<br>
+                        　桃園市 <strong>78.2日</strong>（次久）<br>
+                        ・金龍海嘯持續影響，買方殺價更有勇氣<br>
+                        ・資料來源：住商機構內部數據、CTWANT
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">房市正式轉向買方！台南議價率衝到19.5%，桃園18.2%...現在出手能砍近2成？但成交要等79天，你撐得住嗎？「金龍海嘯」後的議價攻略👇</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">六都地圖標示議價率與成交天數（顏色深淺代表嚴重程度）；側邊加「議價空間擴大＝買方市場」說明框；底部放「現在該出手還是再等？」判斷流程圖</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">「金龍海嘯」是2025下半年至今最熱關鍵詞，議價率數據直接反映買賣雙方力量消長；台南、桃園是過去超漲區，現在回調幅度最大，區域分化明顯</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#買方市場</span>
+                    <span class="tag">#議價空間</span>
+                    <span class="tag">#金龍海嘯</span>
+                    <span class="tag">#成交天數</span>
+                </div>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="topic-card">
+                <div class="topic-number">3</div>
+                <h2 class="topic-title">土方之亂引爆建商倒閉潮！清運成本暴增5-10倍，房市雪上加霜？</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>新制上路</strong>：2026年1月起廢棄土方強制裝GPS追蹤流向<br>
+                        ・<strong>合法棄置場嚴重短缺</strong>：全台核准土資場僅<strong>140處</strong>，胃納量遠不足<br>
+                        ・<strong>成本暴增</strong>：土方清運成本飆升<strong>5至10倍</strong><br>
+                        ・<strong>建商危機</strong>：資金吃緊的中小建商被迫停工，恐演變為連鎖倒閉潮<br>
+                        ・專家示警：房市轉空、買氣觀望之際，土方之亂是「壓垮駱駝的最後稻草」<br>
+                        ・資料來源：房產溫度計、不動產協進會、甲山林
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">土方新制上路，清運成本暴增5-10倍！全台合法土資場只有140處...建商喊「無處倒土被迫停工」，專家警告恐引爆倒閉潮。買預售屋的人該擔心收不到房嗎？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">工地堆積土方示意圖；數據視覺化：「140處」vs「龐大需求」對比、「成本×5-10倍」箭頭；底部加「中小建商倒閉風險」警示框與「預售屋交屋風險」提醒</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">土方之亂是1月才爆發的突發危機，影響面廣（交屋潮+興建潮）；「建商倒閉潮」直接衝擊預售屋買家信心，是當前房市最大不確定因素之一</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#土方之亂</span>
+                    <span class="tag">#建商倒閉</span>
+                    <span class="tag">#預售屋風險</span>
+                    <span class="tag">#清運成本</span>
+                </div>
+            </div>
+
+            <!-- Sources -->
+            <div class="sources">
+                <h3>📚 本週資料來源（2/15–2/22）</h3>
+
+                <div class="source-section">
+                    <h4>最新新聞（15篇）</h4>
+                    <ul class="source-list">
+                        <li><a href="https://udn.com/news/story/124626/9324967" target="_blank">輝達與北市府完成簽約，海外總部確定落腳北士科T17、T18基地</a>（聯合新聞網，2/12）</li>
+                        <li><a href="https://annewsmedia.com/2026/01/02/special-report/14870/" target="_blank">輝達賭局！北士科2026商辦「有機會」挑戰百萬？</a>（安傳媒，1/2）</li>
+                        <li><a href="https://www.ctee.com.tw/news/20260213700686-430601" target="_blank">台美關稅拍板、輝達插旗北士科，房市是起死回生還是利多出盡？</a>（工商時報，2/13）</li>
+                        <li><a href="https://money.udn.com/money/story/5621/9174682" target="_blank">輝達來了、北士科會「賣爆」？建商吐真言：不如想像</a>（經濟日報，12/3）</li>
+                        <li><a href="https://www.ctwant.com/article/398536/" target="_blank">房市漸往買方市場傾斜，六都議價率台南19.5%居冠</a>（CTWANT，2/24/2025）</li>
+                        <li><a href="https://today.line.me/tw/v3/article/wJ39PGw" target="_blank">少了交屋潮挹注房市又凍僵，六都1月交易量月減8.3%</a>（鉅亨網，3週前）</li>
+                        <li><a href="https://dailyview.tw/popular/detail/33049" target="_blank">1月房市10大事：輝達「星艦」入主北士科、土方之亂成本飆</a>（房產溫度計，2/19）</li>
+                        <li><a href="https://www.housefeel.com.tw/article/%E6%88%BF%E5%B8%82-%E6%88%BF%E5%B8%82%E6%99%AF%E6%B0%A3-%E6%88%BF%E5%B8%82%E6%8C%87%E6%A8%99/" target="_blank">2026房市如何？北市公會：輝達宅效應+台股衝3萬+新青安2.0=回穩</a>（HouseFeel，1/9）</li>
+                        <li><a href="https://www.moneyweekly.com.tw/ArticleData/Info/article/209538/" target="_blank">六都家戶購屋比全倒，專家指房市呈空頭走勢</a>（理財周刊，2週前）</li>
+                        <li><a href="https://money.udn.com/money/story/5621/9235417" target="_blank">六都及新竹總銷年減近2成，分析：2026房市續低迷</a>（經濟日報，1/1）</li>
+                        <li><a href="https://www.gvm.com.tw/article/126873" target="_blank">「聖誕老人行情」後的2026年房市如何？專家提六個字</a>（遠見雜誌，12/29）</li>
+                        <li><a href="https://www.farglory-realty.com.tw/life-proposal/expert_peizhen_real-estate-2026/" target="_blank">2025房市回顧與2026盤整展望：政策與市場趨勢解析</a>（遠雄房地產，1/2）</li>
+                        <li><a href="https://tw.stock.yahoo.com/news/2026%E6%88%BF%E5%B8%82%E5%B1%95%E6%9C%9B" target="_blank">2026房市展望：全台房價跌定了！台南、高雄跌幅恐逾1成</a>（Yahoo財經，1/5）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/26486" target="_blank">房市冷到結冰！2026年能不能回溫，建商大老闆一句話點破真相</a>（自由時報，12/29）</li>
+                        <li><a href="https://news.591.com.tw/news/11990" target="_blank">2026年房價走勢分歧，房仲：供需回歸理性</a>（591新聞，12/24）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📊 台灣房市週報 VOL.5 ｜ 生成日期：2026年2月22日 ｜ <a href="../index.html">← 返回全部週報</a></p>
+            <p style="margin-top: 10px; opacity: 0.8;">數據來源：聯合新聞網・安傳媒・工商時報・CTWANT・鉅亨網・房產溫度計・HouseFeel・遠見雜誌</p>
+        </div>
+    </div>
+</body>
+</html>
