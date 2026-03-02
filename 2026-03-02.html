@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本週社群內容建議 - 2026/02/23-03/02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .date {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header .nav-back {
+            display: inline-block;
+            margin-top: 16px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: all 0.2s;
+        }
+
+        .header .nav-back:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .meta-item .label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .insights {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 30px;
+        }
+
+        .insights h3 {
+            color: #2d3748;
+            margin-bottom: 16px;
+            font-size: 1.2em;
+        }
+
+        .insights ul {
+            list-style: none;
+        }
+
+        .insights li {
+            padding: 8px 0;
+            color: #2d3748;
+        }
+
+        .insights li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .topic-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .topic-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .topic-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #fdcb6e;
+        }
+
+        .highlight-box h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .post-suggestion {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .post-suggestion .label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .post-suggestion .text {
+            font-size: 1.1em;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .image-direction {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .image-direction .label {
+            font-weight: bold;
+            color: #fc8181;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .image-direction .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .reason-box {
+            background: #fffaf0;
+            border-left: 4px solid #ffa500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .reason-box .label {
+            font-weight: bold;
+            color: #ffa500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .reason-box .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: #667eea;
+            border: 1px solid #c7d2fe;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 4px 4px 4px 0;
+        }
+
+        .sources {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .sources h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .source-section {
+            margin-bottom: 20px;
+        }
+
+        .source-section h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .source-list {
+            list-style: none;
+        }
+
+        .source-list li {
+            padding: 8px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .source-list li:before {
+            content: "📰 ";
+            margin-right: 8px;
+        }
+
+        .source-list a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .source-list a:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #a0aec0;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .meta-info { flex-direction: column; gap: 20px; }
+            .content { padding: 20px; }
+            .topic-card { padding: 20px; }
+            .topic-title { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 本週社群內容建議</h1>
+            <div class="date">2026年2月23日 – 3月2日（VOL.6）</div>
+            <a class="nav-back" href="../index.html">← 返回全部週報</a>
+        </div>
+
+        <div class="meta-info">
+            <div class="meta-item">
+                <div class="number">12</div>
+                <div class="label">相關新聞</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">3</div>
+                <div class="label">推薦主題</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">63%</div>
+                <div class="label">認為非買房時機</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">Q3</div>
+                <div class="label">政策可能鬆綁時點</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="insights">
+                <h3>🔍 本週關鍵趨勢</h3>
+                <ul>
+                    <li>國泰金2月民調：63.3% 認為不是買房時機，房市信心「繼續卡關」呈平盤</li>
+                    <li>勤業眾信打臉樂觀派：房市寒冬期延長，真正回溫要等 2026 年底以後</li>
+                    <li>專家共識：2026 Q2-Q3 是黃金進場窗口，「量回溫、價持平」是訊號</li>
+                    <li>央行政策最快 Q3 微調，年底選舉可能釋利多，但鬆綁力度有限</li>
+                </ul>
+            </div>
+
+            <!-- Topic 1 -->
+            <div class="topic-card">
+                <div class="topic-number">1</div>
+                <h2 class="topic-title">6成民眾認為「不是買房時機」！國泰金民調曝房市信心繼續卡關</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>買房意願</strong>：-41.7（與上月 -42.2 持平）<br>
+                        ・<strong>賣房意願</strong>：-33.4（與上月 -33.5 持平）<br>
+                        ・<strong>63.3%</strong> 認為現在不是買房時機（僅 21.6% 認為是）<br>
+                        ・<strong>57.5%</strong> 認為現在不是賣房時機（僅 24.1% 認為是）<br>
+                        ・<strong>房仲全聯會理事長</strong>：交易量急凍、信心潰散，已非景氣循環問題<br>
+                        ・<strong>警示</strong>：恐引發區域性價格失速、產業倒閉潮、金融與社會風險<br>
+                        ・資料來源：國泰金控 2月「國民經濟信心調查」、自由時報 2/27
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">國泰金最新民調出爐！6成3民眾認為「不是買房時機」，買賣雙方都不敢動...房市信心「繼續卡關」呈平盤整理。房仲理事長警告：這已經不是景氣循環問題，而是政策干預累積的結構性問題！你覺得今年房市會解凍嗎？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">圓餅圖：63.3% vs 21.6%「不是買房時機 vs 是買房時機」；搭配買房意願趨勢線圖（持續負值）；底部加上「信心卡關」或「雙向觀望」文字標籤</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">國泰金民調是房市信心最權威指標，「6成認為非買房時機」具體數字震撼力強；房仲理事長「非景氣循環、而是政策問題」的警示具新聞性，能引發討論</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#國泰金民調</span>
+                    <span class="tag">#買房意願</span>
+                    <span class="tag">#房市信心</span>
+                    <span class="tag">#雙向卡關</span>
+                </div>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="topic-card">
+                <div class="topic-number">2</div>
+                <h2 class="topic-title">2025 最冷已過？勤業眾信打臉：房市寒冬延長，真正回溫要等年底以後</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>勤業眾信展望報告</strong>：台灣房市將進入「冷靜期」<br>
+                        ・<strong>寒冬延長</strong>：政策高壓 + 貸款收緊 + 資金外流，真正回溫要等 <strong>2026 年底以後</strong><br>
+                        ・<strong>商用不動產降溫明顯</strong>：企業縮減空間，市場競爭加劇<br>
+                        ・<strong>住宅市場</strong>：進入較長觀望期，買氣持續低迷<br>
+                        ・<strong>關鍵指標</strong>：利率走勢、政策方向、產業基本面恢復力<br>
+                        ・資料來源:勤業眾信《2026年商用不動產展望》報告、自由時報 1/7
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">很多人以為「2025最冷已過」，但勤業眾信最新報告打臉：房市寒冬期延長，真正回溫要等到 2026 年底以後！原因是政策高壓、貸款收緊、資金外流三重夾擊...你還在等房價降嗎？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">時間軸：標示「2025寒冬 → 2026持續盤整 → 年底後才回溫」；加上溫度計示意圖顯示「仍處低溫」；側邊列出三大壓力「政策高壓」「貸款收緊」「資金外流」</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">勤業眾信是四大會計師事務所，報告權威性高；「打臉樂觀派」的反轉敘事吸睛；「年底才回溫」的時間點明確，給觀望者清楚預期</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#勤業眾信</span>
+                    <span class="tag">#房市寒冬</span>
+                    <span class="tag">#2026展望</span>
+                    <span class="tag">#回溫時點</span>
+                </div>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="topic-card">
+                <div class="topic-number">3</div>
+                <h2 class="topic-title">專家共識：2026 Q2-Q3 是進場黃金窗口！抓準「量回溫、價持平」訊號</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>最佳進場時機</strong>：2026 年第二季至第三季<br>
+                        ・<strong>底部訊號</strong>：「交易量連續三個月回升」但「價格持平或微跌」<br>
+                        ・<strong>議價空間</strong>：2025 Q1 七都議價率已達 10%-12%，2026 將進一步擴大<br>
+                        ・<strong>央行政策</strong>：最快 Q3 出現微調，但因年底選舉，調整幅度有限<br>
+                        ・<strong>選舉因素</strong>：2026 縣市長選舉年，下半年可能釋出利多避免崩盤<br>
+                        ・<strong>專家建議</strong>：賣方已疲乏願降價，買氣開始承接，是議價空間最大時刻<br>
+                        ・資料來源：168比價王、自由時報、安傳媒
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">專家共識出爐！2026年 Q2-Q3（4-9月）是進場黃金窗口📅 關鍵訊號：「交易量連續3個月回升 + 價格持平或微跌」= 底部確認！議價率已達10-12%，今年還會更大...你準備好了嗎？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">年度時間軸：Q1觀望期 → Q2-Q3黃金窗口（高亮標示）→ Q4選舉可能利多；加上「底部訊號」檢查清單：✓量回溫 ✓價持平 ✓議價大；底部放行事曆提醒</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">給出明確時間點（Q2-Q3）與可驗證訊號，實用性強；結合央行政策與選舉因素的分析有深度；對觀望中的自住客極具參考價值</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#進場時機</span>
+                    <span class="tag">#Q2Q3黃金窗口</span>
+                    <span class="tag">#底部訊號</span>
+                    <span class="tag">#議價空間</span>
+                </div>
+            </div>
+
+            <!-- Sources -->
+            <div class="sources">
+                <h3>📚 本週資料來源（2/23–3/2）</h3>
+
+                <div class="source-section">
+                    <h4>最新新聞（12篇）</h4>
+                    <ul class="source-list">
+                        <li><a href="https://estate.ltn.com.tw/article/27021" target="_blank">國泰金2月民調：63.3%認為非買房時機，房市信心繼續卡關</a>（自由時報，2/27）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/26581" target="_blank">勤業眾信：房市最冷一年已過？寒冬恐延長至2026年底</a>（自由時報，1/7）</li>
+                        <li><a href="https://168-house.com/2026-%E5%8F%B0%E7%81%A3%E6%88%BF%E5%9C%B0%E7%94%A2%E5%B8%82%E5%A0%B4%E6%B7%B1%E5%BA%A6%E5%89%8D%E7%9E%BB%E5%A0%B1%E5%91%8A" target="_blank">2026台灣房地產市場深度前瞻：Q2-Q3是進場黃金窗口</a>（168比價王，12/24）</li>
+                        <li><a href="https://www.farglory-realty.com.tw/life-proposal/expert_peizhen_real-estate-2026/" target="_blank">2025房市回顧與2026盤整展望：政策與市場趨勢解析</a>（遠雄房地產，1/2）</li>
+                        <li><a href="https://finance.technews.tw/2025/12/28/total-mortgage-amount-taiwan" target="_blank">從第七波打房到曙光乍現，台灣房市2026年迎來轉機三大關鍵</a>（TechNews，12/28）</li>
+                        <li><a href="https://www.housefeel.com.tw/article/%E6%88%BF%E5%B8%82-%E6%88%BF%E5%B8%82%E6%99%AF%E6%B0%A3-%E6%88%BF%E5%B8%82%E6%8C%87%E6%A8%99/" target="_blank">2026房市如何？教你用房價指數判斷房市景氣</a>（HouseFeel，1/9）</li>
+                        <li><a href="https://annewsmedia.com/2026/01/03/special-report/14888/" target="_blank">台灣房市2026關鍵3變數：一場由政策主導的耐心考驗</a>（安傳媒，1/3）</li>
+                        <li><a href="https://annewsmedia.com/2025/12/04/market-news/13873/" target="_blank">台灣房市2025陷9年低點，2026成「調整年」</a>（安傳媒，12/4）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/26694" target="_blank">2026建商不購地、少推案成常態，房市恐迎關鍵轉折</a>（自由時報，1/17）</li>
+                        <li><a href="https://www.gvm.com.tw/article/126873" target="_blank">「聖誕老人行情」後的2026年房市如何？專家：理性供需</a>（遠見雜誌，12/29）</li>
+                        <li><a href="https://news.cnyes.com/news/id/6291012" target="_blank">鄉林賴正鎰：2026台灣房市「仍看央行臉色」</a>（鉅亨網，12/29）</li>
+                        <li><a href="https://tw.stock.yahoo.com/news/2026%E6%88%BF%E5%B8%82%E5%B1%95%E6%9C%9B" target="_blank">2026房市展望：全台房價平均跌10%，2027盤整止跌回溫</a>（Yahoo財經，1/5）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📊 台灣房市週報 VOL.6 ｜ 生成日期：2026年3月2日 ｜ <a href="../index.html">← 返回全部週報</a></p>
+            <p style="margin-top: 10px; opacity: 0.8;">數據來源：國泰金控・勤業眾信・自由時報・168比價王・遠雄房地產・TechNews・安傳媒</p>
+        </div>
+    </div>
+</body>
+</html>
