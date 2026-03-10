@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本週社群內容建議 - 2026/03/02-03/09</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .date {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header .nav-back {
+            display: inline-block;
+            margin-top: 16px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: all 0.2s;
+        }
+
+        .header .nav-back:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item .number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .meta-item .label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .insights {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 30px;
+        }
+
+        .insights h3 {
+            color: #2d3748;
+            margin-bottom: 16px;
+            font-size: 1.2em;
+        }
+
+        .insights ul {
+            list-style: none;
+        }
+
+        .insights li {
+            padding: 8px 0;
+            color: #2d3748;
+        }
+
+        .insights li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .topic-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .topic-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .topic-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #fdcb6e;
+        }
+
+        .highlight-box h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .post-suggestion {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .post-suggestion .label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .post-suggestion .text {
+            font-size: 1.1em;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .image-direction {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .image-direction .label {
+            font-weight: bold;
+            color: #fc8181;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .image-direction .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .reason-box {
+            background: #fffaf0;
+            border-left: 4px solid #ffa500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .reason-box .label {
+            font-weight: bold;
+            color: #ffa500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .reason-box .text {
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: #667eea;
+            border: 1px solid #c7d2fe;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 4px 4px 4px 0;
+        }
+
+        .sources {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .sources h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .source-section {
+            margin-bottom: 20px;
+        }
+
+        .source-section h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .source-list {
+            list-style: none;
+        }
+
+        .source-list li {
+            padding: 8px 0;
+            color: #4a5568;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .source-list li:before {
+            content: "📰 ";
+            margin-right: 8px;
+        }
+
+        .source-list a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .source-list a:hover {
+            color: #667eea;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #a0aec0;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .meta-info { flex-direction: column; gap: 20px; }
+            .content { padding: 20px; }
+            .topic-card { padding: 20px; }
+            .topic-title { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 本週社群內容建議</h1>
+            <div class="date">2026年3月2日 – 3月9日（VOL.7）</div>
+            <a class="nav-back" href="../index.html">← 返回全部週報</a>
+        </div>
+
+        <div class="meta-info">
+            <div class="meta-item">
+                <div class="number">14</div>
+                <div class="label">相關新聞</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">3</div>
+                <div class="label">推薦主題</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">45%</div>
+                <div class="label">大同區交易增幅</div>
+            </div>
+            <div class="meta-item">
+                <div class="number">3倍</div>
+                <div class="label">北市房價差距</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="insights">
+                <h3>🔍 本週關鍵趨勢</h3>
+                <ul>
+                    <li>台北大同區逆勢突圍：全台年減25%，大同區卻暴衝45%，南大同推案熱絡成撐盤區</li>
+                    <li>房市「重開機」訊號：貸款環境開始鬆動，剛需族不再望貸興嘆，資金低調回流</li>
+                    <li>天龍國房價3倍大斷層：最高225萬vs最低75萬，蛋白區已重回7字頭</li>
+                    <li>空屋率揭曉低空屋名單：全台僅6區空置率<6%，供需健康度明確分化</li>
+                </ul>
+            </div>
+
+            <!-- Topic 1 -->
+            <div class="topic-card">
+                <div class="topic-number">1</div>
+                <h2 class="topic-title">全台年減25%，北市大同區卻逆勢暴衝45%！台北雙星題材+都更支撐成撐盤黑馬</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>2025全台移轉量</strong>：26.1萬棟，年減<strong>25%</strong>（史上最大跌幅）<br>
+                        ・<strong>台北市整體</strong>：近一年成交量年減 40%<br>
+                        ・<strong>大同區逆勢突圍</strong>：年增幅達 <strong>45%</strong>，成北市交易成長冠軍<br>
+                        ・<strong>南大同推案熱</strong>：「世座友樂町」「宏道一品」「毅聯WIN」「光合織森」「毅聯首馥」（大型都更案）<br>
+                        ・<strong>關鍵優勢</strong>：多線捷運、台北車站外溢效應、承德路/民權西路交通樞紐、台北雙星建設題材<br>
+                        ・資料來源：591房屋交易網、自由時報 3/4
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">全台房市墜崖式年減25%，台北市12個行政區中，「大同區」卻逆勢暴衝45%成交易成長王！南大同推案熱、多線捷運+台北雙星題材...這個被低估的區域要翻身了？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">台北市12行政區成交量變化對比圖，大同區45%增幅用亮色標示；搭配南大同推案地圖（標示各建案位置）；加上「台北雙星」「捷運多線」「都更題材」三大優勢標籤</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">「全台慘跌vs大同區暴衝」強烈對比吸睛；45%增幅數字震撼；南大同推案熱、台北雙星題材具體，適合吸引北市購屋族關注</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#大同區逆勢</span>
+                    <span class="tag">#台北雙星</span>
+                    <span class="tag">#都更題材</span>
+                    <span class="tag">#成交量暴衝</span>
+                </div>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="topic-card">
+                <div class="topic-number">2</div>
+                <h2 class="topic-title">房市「重開機」訊號來了！貸款環境鬆動，剛需族不再望貸興嘆</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>市場定調</strong>：2026是「重開機」而非翻多，從激情追價回到理性評估<br>
+                        ・<strong>貸款環境變化</strong>：央行總裁楊金龍釋訊號，不動產放貸自主管理，授信節奏逐步調整<br>
+                        ・<strong>專家觀點</strong>：「剛需族不會再一直望貸興嘆」，自住買盤低調回流<br>
+                        ・<strong>市場主角轉換</strong>：從短線投機 → 有準備的自住客與長線布局者<br>
+                        ・<strong>2026定位</strong>：不是終局，而是品質競爭的開始、去蕪存菁的過程<br>
+                        ・資料來源：好宅攻略老編管清智、自由時報 3/3
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">房市「重開機」訊號來了！央行放鬆貸款管制，專家：剛需族不再望貸興嘆，自住買盤開始低調回流...2026不是翻多，而是從激情追價回到理性評估，你準備好進場了嗎？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">「重開機」電腦示意圖；對比圖「激情追價 vs 理性評估」；市場主角變化「投機客 → 自住客」箭頭；底部加「去蕪存菁」「品質競爭」關鍵詞</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">「重開機」概念新穎，不同於悲觀或樂觀的二元對立；貸款鬆動對剛需族是實質利多；「不再望貸興嘆」打動首購族痛點</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#房市重開機</span>
+                    <span class="tag">#貸款鬆動</span>
+                    <span class="tag">#剛需回流</span>
+                    <span class="tag">#理性評估</span>
+                </div>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="topic-card">
+                <div class="topic-number">3</div>
+                <h2 class="topic-title">天龍國房價3倍大斷層！豪宅225萬vs蛋白區75萬，北市蛋白已重回7字頭</h2>
+
+                <div class="highlight-box">
+                    <h4>📈 最新數據</h4>
+                    <p>
+                        ・<strong>最高單價前3名</strong>：<br>
+                        　1️⃣ 中正區「柏金」<strong>225.5萬/坪</strong><br>
+                        　2️⃣ 松山區「西華璞園」224.7萬/坪<br>
+                        　3️⃣ 大安區「德運元鼎」214.7萬/坪<br>
+                        ・<strong>最低單價前3名</strong>：<br>
+                        　1️⃣ 士林區「漢皇韶光」<strong>75.4萬/坪</strong>（已過半銷售）<br>
+                        　2️⃣ 文山區「將捷旅境」79萬/坪（已完銷）<br>
+                        　3️⃣ 北投區「華威豐耘」80.7萬/坪<br>
+                        ・<strong>價差</strong>：最高vs最低相差 <strong>3倍</strong><br>
+                        ・<strong>蛋白區鬆動</strong>：年底公開新案已出現7字頭，比年初80萬起跳更保守<br>
+                        ・資料來源：住展雜誌、自由時報 3/5
+                    </p>
+                </div>
+
+                <div class="post-suggestion">
+                    <span class="label">💬 建議貼文</span>
+                    <div class="text">天龍國房價3倍大斷層！最貴中正區「柏金」225萬/坪 vs 最便宜士林「漢皇韶光」75萬/坪...更誇張的是，北市蛋白區年底已重回7字頭！高價案、低價案兩樣情，你會選哪一邊？</div>
+                </div>
+
+                <div class="image-direction">
+                    <span class="label">🎨 配圖方向</span>
+                    <div class="text">台北市地圖標示高低價區域（用顏色深淺區分）；最高vs最低價建案對比卡片（含照片、價格、銷售狀況）；價格走勢：「年初80萬 → 年底7字頭」下降箭頭</div>
+                </div>
+
+                <div class="reason-box">
+                    <span class="label">💡 選題理由</span>
+                    <div class="text">「3倍價差」數字震撼；列出具體建案與價格，資訊實用；「蛋白區重回7字頭」對首購族是重要訊號</div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span class="tag">#台北房價斷層</span>
+                    <span class="tag">#蛋白區7字頭</span>
+                    <span class="tag">#豪宅vs低價案</span>
+                    <span class="tag">#兩極分化</span>
+                </div>
+            </div>
+
+            <!-- Sources -->
+            <div class="sources">
+                <h3>📚 本週資料來源（3/2–3/9）</h3>
+
+                <div class="source-section">
+                    <h4>最新新聞（14篇）</h4>
+                    <ul class="source-list">
+                        <li><a href="https://estate.ltn.com.tw/article/27077" target="_blank">全台房市墜崖式年減25%，北市大同區竟逆勢暴衝45%</a>（自由時報，3/4）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27076" target="_blank">資金回流房市？專家：剛需族不再望貸興嘆</a>（自由時報，3/3）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27099" target="_blank">天龍國房價現3倍大斷層！豪宅225萬、蛋白區重回7字頭</a>（自由時報，3/5）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27123" target="_blank">全台房市僅剩6名倖存者？內政部揭曉低空屋名單</a>（自由時報，3/6）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27081" target="_blank">台南重大建設支撐房市，仁德、新市與善化年跌幅最深</a>（自由時報，3/4）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27078" target="_blank">年後自住型買家回籠看屋意願小增，高屏輕豪宅傳成交佳音</a>（自由時報，3/3）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27091" target="_blank">五泰輕軌環評正式闖關，洲子洋5年漲38%可望成黑馬</a>（自由時報，3/4）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27108" target="_blank">台南火車站區改造城市門面，站區輕豪宅坐5見6</a>（自由時報，3/5）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27106" target="_blank">去年賣屋注意！舊制售屋所得標準出爐，豪宅門檻未調整</a>（自由時報，3/5）</li>
+                        <li><a href="https://estate.ltn.com.tw/article/27075" target="_blank">非六都社宅招租！租金最低4折起，加碼放寬兄弟姊妹可共住</a>（自由時報，3/4）</li>
+                        <li><a href="https://finance.technews.tw/2025/12/28/total-mortgage-amount-taiwan" target="_blank">從第七波打房到曙光乍現，台灣房市2026年迎來轉機三大關鍵</a>（TechNews，12/28）</li>
+                        <li><a href="https://www.moneyweekly.com.tw/ArticleData/Info/Article/206312" target="_blank">2026台灣房市還是要看央行臉色，賴正鎰提三大趨勢及四大政策建言</a>（理財周刊，12/29）</li>
+                        <li><a href="https://today.line.me/tw/v3/article/wJYMzeR" target="_blank">房貸總量回歸內控、新青安不落日！利空出盡營建股出列</a>（今周刊，12/24）</li>
+                        <li><a href="https://www.hbhousing.com.tw/news/detail.aspx?num=5542" target="_blank">限貸令是什麼？有什麼影響？3分鐘看央行限貸令政策</a>（住商不動產，12/16）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📊 台灣房市週報 VOL.7 ｜ 生成日期：2026年3月9日 ｜ <a href="../index.html">← 返回全部週報</a></p>
+            <p style="margin-top: 10px; opacity: 0.8;">數據來源：自由時報・591房屋交易網・住展雜誌・TechNews・理財周刊・今周刊</p>
+        </div>
+    </div>
+</body>
+</html>
